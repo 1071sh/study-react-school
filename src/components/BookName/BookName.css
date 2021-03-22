@@ -1,0 +1,77 @@
+.container {
+    width: 1000px;
+    margin: 50px auto;
+    background: #fff;
+}
+
+.sec-heading {
+    padding: 0.5em;
+    color: #010101;
+    background: #eaf3ff;
+    border-bottom: solid 3px #516ab6;
+    font-size: 28px;
+    font-weight: 700;
+    margin:0 0 32px;
+}
+
+.sec-text{
+    text-align: center;
+    margin:0 0 24px;
+}
+
+.sec-cat{
+    margin:0 0 50px;
+}
+
+.sec-cat__list{
+    display: flex;
+}
+
+.sec-cat__item{
+    width:calc(100% / 3);
+}
+
+.sec-cat__item a{
+    display: block;
+    text-align: center;
+    height:45px;
+    line-height:50px;
+    text-decoration: none;
+    transition: opacity 200ms ease-in-out;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.sec-cat__item a:hover{
+    opacity:0.75;
+}
+
+.sec-cat__item .react{
+    color: #60DAFB;
+    border-color: #60DAFB;
+}
+
+.sec-cat__item .react.active{
+    background: #60DAFB;;
+    color: #fff;
+}
+
+.sec-cat__item .vue{
+    color: #4fc08d;
+    border-color: #4fc08d;
+}
+
+.sec-cat__item .vue.active{
+    background: #4fc08d;
+    color: #fff;
+}
+
+.sec-cat__item .angular{
+    color: #DD0031;
+    border-color: #DD0031;
+}
+
+.sec-cat__item .angular.active{
+    background: #DD0031;
+    color: #fff;
+}

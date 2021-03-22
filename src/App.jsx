@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import Booklist from "./components/Booklist";
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import React from "react";
+import Booklist from "./components/Booklist/Booklist";
+import BookName from "./components/BookName/BookName";
+import { BrowserRouter, Route } from "react-router-dom";
 import axios from "axios";
-import { Button } from "@material-ui/core";
 
 // 入力値に`books`を追加して出力するシンプルな関数を定義
 const getDataFormAPI = async (keyword) => {
@@ -13,47 +13,10 @@ const getDataFormAPI = async (keyword) => {
 
 function App() {
     const languages = ["React", "Vue", "Angular"]; // 追加
-    const [text, setText] = useState("");
-    const handleChange = (e) => {
-        setText(() => e.target.value);
-    };
     return (
         <BrowserRouter>
-            <div>
-                <h1>React App</h1>
-                <ul>
-                    <li>
-                        <Link to="/react">React</Link>
-                    </li>
-                    <li>
-                        <Link to="/vue">Vue</Link>
-                    </li>
-                    <li>
-                        <Link to="/angular">Angular</Link>
-                    </li>
-                    <li>
-                        <input
-                            value={text}
-                            onChange={handleChange}
-                            type="text"
-                            placeholder="本のタイトル"
-                        />
-                        <Link to={text} onClick={() => handleChange}>
-                            <Button variant="contained" color="primary">
-                                書籍を探す
-                            </Button>
-                        </Link>
-                    </li>
-                </ul>
-                <Route
-                    path="/:text"
-                    render={(props) => (
-                        <Booklist
-                            language={text}
-                            getData={(keyword) => getDataFormAPI(keyword)} // getDataという名前で関数を渡す
-                        />
-                    )}
-                />
+            <div className="container">
+                <BookName />
                 <Route
                     path="/react"
                     render={(props) => (
